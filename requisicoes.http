@@ -2,7 +2,7 @@ POST http://localhost:3333/courses
 Content-Type: application/json
 
 {
-  "title": "Curso de Docker"
+  "title": "Curso de Tailwind"
 }
 
 ###
@@ -10,4 +10,20 @@ Content-Type: application/json
 GET http://localhost:3333/courses
 
 ###
-GET http://localhost:3333/courses/20e1694b-0c62-43e5-9791-01abad0678c0
+GET http://localhost:3333/courses/6sdasd
+
+###
+PUT http://localhost:3333/courses/adsasdad
+Content-Type: application/json
+
+{
+  "title": "Outro curso"
+}
+
+###
+DELETE http://localhost:3333/courses/6d8c014a-c5ea-4126-ad4f-6eb0699aa03e
+Content-Type: application/json
+
+{
+  "title": "Outro curso"
+}

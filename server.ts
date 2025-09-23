@@ -51,7 +51,6 @@ server.post('/courses', (request, reply) => {
     title: string
   }
 
-
   const courseId = crypto.randomUUID()
 
   const body = request.body as Body
@@ -61,9 +60,63 @@ server.post('/courses', (request, reply) => {
     return reply.status(400).send({ message: 'Título obrigatório'})
   }
 
-  courses.push({ id: courseId, title: 'Novo curso' })
+  courses.push({ id: courseId, title: courseTitle })
 
   return reply.status(201).send({ courseId: courseId })
+})
+
+server.put('/courses/:id', (request, reply) => {
+  type Params = {
+    id: string
+  }
+
+  type Body = {
+    title: string
+  }
+
+  const params = request.params as Params
+  const courseId = params.id
+
+  const body = request.body as Body
+  const title = body.title
+
+  if(!title){
+    return reply.status(400).send({ message: 'Title is required'})
+  }
+
+  const updatedCourse = {
+    id: courseId,
+    title: title,
+  }
+
+  const courseIndex = courses.findIndex(course => course.id === courseId)
+
+  if(courseIndex === -1) {
+    return reply.status(404).send({ message: 'Course not found'})
+  }
+
+  courses[courseIndex] = updatedCourse
+
+  return reply.status(200).send({ course: updatedCourse })
+})
+
+server.delete('/courses/:id', (request, reply) => {
+  type Params = {
+    id: string
+  }
+
+  const params = request.params as Params
+  const courseId = params.id
+
+  const courseIndex = courses.findIndex(course => course.id === courseId)
+
+  if(courseIndex === -1) {
+    return reply.status(404).send({ message: 'Course not found'})
+  }
+
+  courses.splice(courseIndex, 1)
+
+  return reply.status(204).send()
 })
 
 server.listen({ port: 3333 }).then(() => {
