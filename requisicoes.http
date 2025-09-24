@@ -2,12 +2,12 @@ POST http://localhost:3333/courses
 Content-Type: application/json
 
 {
-  "title": "Curso de Tailwind"
+  "title": "Curso de Node"
 }
 
 ###
 
-GET http://localhost:3333/courses
+GET http://localhost:3333/courses?orderBy=title
 
 ###
 GET http://localhost:3333/courses/cf50c27b-d589-4008-8658-4f3250985fb1

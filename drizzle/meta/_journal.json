@@ -15,6 +15,34 @@
       "when": 1758667200855,
       "tag": "0001_burly_random",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1758755099109,
+      "tag": "0002_yielding_wendigo",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1758755533081,
+      "tag": "0003_confused_viper",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1758757227415,
+      "tag": "0004_workable_rick_jones",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1758758329602,
+      "tag": "0005_bent_rumiko_fujikawa",
+      "breakpoints": true
     }
   ]
 }
