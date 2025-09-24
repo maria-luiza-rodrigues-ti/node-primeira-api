@@ -10,10 +10,10 @@ Content-Type: application/json
 GET http://localhost:3333/courses
 
 ###
-GET http://localhost:3333/courses/6sdasd
+GET http://localhost:3333/courses/cf50c27b-d589-4008-8658-4f3250985fb1
 
 ###
-PUT http://localhost:3333/courses/adsasdad
+PUT http://localhost:3333/courses/6ad97416-1f60-42bf-b866-8b1dc789765e
 Content-Type: application/json
 
 {
@@ -21,9 +21,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3333/courses/6d8c014a-c5ea-4126-ad4f-6eb0699aa03e
-Content-Type: application/json
-
-{
-  "title": "Outro curso"
-}
+DELETE http://localhost:3333/courses/6ad97416-1f60-42bf-b866-8b1dc789765e
