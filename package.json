@@ -9,7 +9,7 @@
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
     "pretest": "dotenv -e .env.test drizzle-kit migrate",
-    "test": "dotenv -e .env.test vitest run"
+    "test": "dotenv -e .env.test vitest run --coverage"
   },
   "author": "",
   "license": "ISC",
@@ -29,6 +29,7 @@
     "@faker-js/faker": "^9.9.0",
     "@types/node": "^24.2.1",
     "@types/supertest": "6.0.3",
+    "@vitest/coverage-v8": "^3.2.4",
     "dotenv-cli": "^10.0.0",
     "drizzle-kit": "^0.31.4",
     "supertest": "^7.1.4",
