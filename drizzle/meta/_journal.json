@@ -43,6 +43,13 @@
       "when": 1758758329602,
       "tag": "0005_bent_rumiko_fujikawa",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1761078360774,
+      "tag": "0006_redundant_scrambler",
+      "breakpoints": true
     }
   ]
 }

@@ -1,32 +1,48 @@
 import { db } from './client.ts'
 import { courses, enrollments, users } from './schema.ts'
+import { hash } from 'argon2'
 import { fakerPT_BR as faker } from '@faker-js/faker'
 
 async function seed() {
+  const passwordHash = await hash('123456')
+
+
   const usersInsert = await db.insert(users).values([
     {
       name: faker.person.fullName(),
-      email: faker.internet.email()
+      email: faker.internet.email(),
+      role: 'student',
+      password: passwordHash
     },
     {
       name: faker.person.fullName(),
-      email: faker.internet.email()
+      email: faker.internet.email(),
+      role: 'student',
+      password: passwordHash
     },
     {
       name: faker.person.fullName(),
-      email: faker.internet.email()
+      email: faker.internet.email(),
+      role: 'student', 
+      password: passwordHash
     },
     {
       name: faker.person.fullName(),
-      email: faker.internet.email()
+      email: faker.internet.email(),
+      role: 'student',
+      password: passwordHash
     },
     {
       name: faker.person.fullName(),
-      email: faker.internet.email()
+      email: faker.internet.email(),
+      role: 'student',
+      password: passwordHash
     },
     {
       name: faker.person.fullName(),
-      email: faker.internet.email()
+      email: faker.internet.email(),
+      role: 'student',
+      password: passwordHash
     }
   ]).returning()
 
