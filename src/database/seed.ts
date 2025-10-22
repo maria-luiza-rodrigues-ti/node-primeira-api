@@ -41,7 +41,7 @@ async function seed() {
     {
       name: faker.person.fullName(),
       email: faker.internet.email(),
-      role: 'student',
+      role: 'manager',
       password: passwordHash
     }
   ]).returning()

@@ -1,8 +1,9 @@
 POST http://localhost:3333/courses
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzZWI2MWRhMi1jN2NkLTQ5ODMtYTJlMi0xMjM3YzI0NTcyMzUiLCJyb2xlIjoibWFuYWdlciIsImlhdCI6MTc2MTA4OTg0N30.LPvGg0a-yrU8p_w_CvqRgisu6qxi5vEIMHKQb959Ogs
 
 {
-  "title": "Curso de Node"
+  "title": "Curso de React"
 }
 
 ###
@@ -10,7 +11,8 @@ Content-Type: application/json
 GET http://localhost:3333/courses?orderBy=title
 
 ###
-GET http://localhost:3333/courses/cf50c27b-d589-4008-8658-4f3250985fb1
+GET http://localhost:3333/courses/6ddf9d7f-2b53-4ea3-8a86-2e4c00cc6949
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzZWI2MWRhMi1jN2NkLTQ5ODMtYTJlMi0xMjM3YzI0NTcyMzUiLCJyb2xlIjoibWFuYWdlciIsImlhdCI6MTc2MTA4OTg0N30.LPvGg0a-yrU8p_w_CvqRgisu6qxi5vEIMHKQb959Ogs
 
 ###
 PUT http://localhost:3333/courses/6ad97416-1f60-42bf-b866-8b1dc789765e
@@ -22,3 +24,13 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:3333/courses/6ad97416-1f60-42bf-b866-8b1dc789765e
+
+
+###
+POST http://localhost:3333/sessions
+Content-Type: application/json
+
+{
+  "email": "Silas_Albuquerque@gmail.com",
+  "password": "123456"
+}

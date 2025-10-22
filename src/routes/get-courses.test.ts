@@ -1,12 +1,14 @@
-import { enrollments } from './../database/schema';
 import { test, expect } from 'vitest'
 import request from 'supertest'
 import { server } from '../app.ts'
 import { makeCourse } from '../tests/factories/make-course.ts'
 import { randomUUID } from 'node:crypto'
+import { makeAuthenticatedUser } from '../tests/factories/make-user.ts';
 
 test('get a course', async() => {
   await server.ready()
+
+  const { token } = await makeAuthenticatedUser('manager')
 
   const titleId = randomUUID()
 
@@ -14,6 +16,7 @@ test('get a course', async() => {
 
   const response = await request(server.server)
   .get(`/courses?search=${titleId}`)
+  .set('Authorization', token)
 
   expect(response.status).toEqual(200)
   expect(response.body).toEqual({
